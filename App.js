@@ -20,7 +20,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './pages/HomeScreen';
 import CharSheet from './pages/CharacterSheet';
-
+import DiceChoices from './pages/Dice';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,7 +57,21 @@ const App = () => {
             },
           }}
         />
-                
+               <Stack.Screen
+          name="Dice"
+          component={DiceChoices}
+          options={{
+            title: 'Dice Roller', 
+            headerStyle: {
+              backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+            
+          }}
+        />  
       </Stack.Navigator>
     </NavigationContainer>
   );
